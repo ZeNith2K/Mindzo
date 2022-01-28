@@ -45,7 +45,12 @@
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
             Cancel
           </button>
-          <button type="button" class="btn btn-primary" @click="submitHandler">
+          <button
+            data-bs-dismiss="modal"
+            type="button"
+            class="btn btn-primary"
+            @click="submitHandler"
+          >
             Submit
           </button>
         </div>

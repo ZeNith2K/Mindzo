@@ -80,7 +80,14 @@ export default {
           (post) => post.id !== this.getSelectedPostId()
         );
         this.$store.dispatch("setPosts", newPostsArray);
-        this.$store.dispatch("setSelectedPostId", this.getSelectedPostId() + 1);
+        if (this.getSelectedPostId() > 100) {
+          this.$store.dispatch("setSelectedPostId", 1);
+        } else {
+          this.$store.dispatch(
+            "setSelectedPostId",
+            this.getSelectedPostId() + 1
+          );
+        }
         this.fetchPost();
         this.fetchComments();
       }
